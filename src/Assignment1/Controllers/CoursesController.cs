@@ -16,7 +16,6 @@ namespace Assignment1.Controllers
         private static List<Course> _courses;
 
         // GET api/courses 
-        // Nær í alla áfangana
         [HttpGet]
         public List<Course> GetCourses()
         {
@@ -47,17 +46,24 @@ namespace Assignment1.Controllers
             return _courses;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        /* GET api/values/5
+        [HttpGet("{id}", Name ="GetCourse")]
+        public IActionResult GetById(int id)
         {
-            return "value";
-        }
+
+        }*/
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult CreateCourse([FromBody]Course item)
         {
+            if (item == null)
+            {
+                return BadRequest();
+            }
+            _courses.Add(item);
+
+            return CreatedAtRoute("GetCourse", new { id = item.ID }, item);
         }
 
         // PUT api/values/5
