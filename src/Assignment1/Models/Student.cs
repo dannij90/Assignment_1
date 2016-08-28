@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Assignment1.Models
+﻿namespace Assignment1.Models
 {
+    // The data for a student SSN & Name
     public class Student
     {
         public string SSN { get; set; }

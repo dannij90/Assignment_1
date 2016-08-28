@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Assignment1.Models
 {
     public class Course
     {
-        // The data in my Course
+        // The data in my Courses
 
         public int ID { get; set; }
         public string Name { get; set; }
